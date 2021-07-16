@@ -1,0 +1,14 @@
+{
+  "files.associations": {
+    "*.conf": "NGINX",
+    "atomic": "cpp",
+    "cstdint": "cpp",
+    "random": "cpp",
+    "*.tcc": "cpp",
+    "stop_token": "cpp",
+    "algorithm": "cpp",
+    "utility": "cpp",
+    "__config": "cpp",
+    "locale": "cpp"
+  }
+}

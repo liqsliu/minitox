@@ -638,9 +638,6 @@ void group_message_cb(Tox *tox, uint32_t group_num, uint32_t peer_number, TOX_ME
 
     if (GEN_INDEX(group_num, TALK_TYPE_GROUP) == TalkingTo) {
         PRINT("%s", msg);
-        if (cf->title == "wtfipfs") {
-            PRINT("get msg：%s", msg);
-        }
     } else {
         INFO("* receive group message from %s, in group %s",peer->name, cf->title);
     }

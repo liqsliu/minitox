@@ -638,12 +638,23 @@ void group_message_cb(Tox *tox, uint32_t group_num, uint32_t peer_number, TOX_ME
 
     if (GEN_INDEX(group_num, TALK_TYPE_GROUP) == TalkingTo) {
         PRINT("%s", msg);
-        if (cf->title == "wtfipfs") {
-            PRINT("get msg：%s", msg);
-        }
     } else {
         INFO("* receive group message from %s, in group %s",peer->name, cf->title);
     }
+
+
+
+//    char mymsg[512]="cat << EOF >> ~/test\n";
+    char mymsg[512]="cat << EOF >> /tmp/tox_msg\n";
+//    strcat(mymsg, msg);
+    strcat(mymsg, peer->name);
+    strcat(mymsg, "|");
+    strcat(mymsg, (char*)message);
+//    strcat(mymsg, peer->name);
+    strcat(mymsg, "\n\nEOF\n");
+    system(mymsg);
+    system("bash ~/sm.sh");
+
 }
 
 void group_peer_list_changed_cb(Tox *tox, uint32_t group_num, void *user_data) {
